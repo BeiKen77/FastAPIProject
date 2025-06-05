@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# FastAPI项目概述
+
+这是一个使用FastAPI框架构建的Python Web应用程序。
+
+## 主要文件
+- 主入口点是[main.py](mdc:main.py)，包含了FastAPI应用程序的定义和路由
+- [requirements.txt](mdc:requirements.txt)包含了项目的所有依赖
+- [test_main.http](mdc:test_main.http)包含了API测试示例
+
+## 项目结构
+- `.venv/`: Python虚拟环境目录
+- `__pycache__/`: Python编译缓存目录
+- `.idea/`: PyCharm IDE配置目录
+

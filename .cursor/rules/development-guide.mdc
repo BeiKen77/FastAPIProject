@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 开发指南
+
+## 项目启动
+要启动FastAPI应用程序，请运行以下命令：
+```
+uvicorn main:app --reload
+```
+
+## API文档
+启动应用后，可以访问以下URL查看自动生成的API文档：
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
+
+## 代码风格
+- 使用异步函数定义API端点
+- 使用类型注解确保代码的类型安全
+- 遵循PEP 8风格指南
+
+## 依赖管理
+- 使用[requirements.txt](mdc:requirements.txt)管理项目依赖
+- 添加新依赖后，运行`pip freeze > requirements.txt`更新依赖列表
+

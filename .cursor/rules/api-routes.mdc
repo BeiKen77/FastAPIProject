@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# API路由
+
+本项目中定义的所有API路由：
+
+## 根路由
+- `GET /`: 在[main.py](mdc:main.py)中定义，返回简单的Hello World消息
+
+## 用户相关路由
+- `GET /hello/{name}`: 在[main.py](mdc:main.py)中定义，返回带有用户名的问候消息
+
+## 测试API
+可以使用[test_main.http](mdc:test_main.http)文件中的请求示例测试这些API
+
