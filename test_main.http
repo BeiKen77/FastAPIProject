@@ -1,11 +1,77 @@
 # Test your FastAPI endpoints
 
-GET http://127.0.0.1:8000/
+### 测试根路由
+GET http://localhost:8000/
 Accept: application/json
 
-###
-
-GET http://127.0.0.1:8000/hello/User
+### 测试问候路由
+GET http://localhost:8000/hello/树莓派
 Accept: application/json
 
-###
+### 创建单个传感器数据
+POST http://localhost:8000/api/sensor-data
+Content-Type: application/json
+
+{
+  "sensor_type": "temperature",
+  "sensor_value": 25.6,
+  "unit": "°C",
+  "device_id": "raspberry-pi-001",
+  "location": "实验室-01"
+}
+
+### 批量创建传感器数据
+POST http://localhost:8000/api/sensor-data/batch
+Content-Type: application/json
+
+{
+  "data": [
+    {
+      "sensor_type": "temperature",
+      "sensor_value": 25.6,
+      "unit": "°C",
+      "device_id": "raspberry-pi-001",
+      "location": "实验室-01"
+    },
+    {
+      "sensor_type": "humidity",
+      "sensor_value": 48.3,
+      "unit": "%",
+      "device_id": "raspberry-pi-001",
+      "location": "实验室-01"
+    }
+  ]
+}
+
+### 获取所有传感器数据
+GET http://localhost:8000/api/sensor-data
+Accept: application/json
+
+### 根据ID获取传感器数据
+GET http://localhost:8000/api/sensor-data/1
+Accept: application/json
+
+### 根据传感器类型获取数据
+GET http://localhost:8000/api/sensor-data/sensor/temperature
+Accept: application/json
+
+### 根据设备ID获取数据
+GET http://localhost:8000/api/sensor-data/device/raspberry-pi-001
+Accept: application/json
+
+### 根据时间范围查询数据
+POST http://localhost:8000/api/sensor-data/time-range
+Content-Type: application/json
+
+{
+  "start_time": "2023-01-01T00:00:00",
+  "end_time": "2023-12-31T23:59:59",
+  "sensor_type": "temperature",
+  "device_id": "raspberry-pi-001",
+  "limit": 100,
+  "offset": 0
+}
+
+### 获取传感器统计数据
+GET http://localhost:8000/api/statistics/sensor/temperature
+Accept: application/json
